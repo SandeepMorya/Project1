@@ -1,0 +1,20 @@
+.flexContainer
+{
+    flex : display;
+}
+
+.fileSearch{
+
+    height: 49vh;
+    width: 70vh;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    margin: 15px;
+}
+
+.text-margin{
+    margin: 15px;
+}
+.data-margin{
+    margin-top: 3px;
+}

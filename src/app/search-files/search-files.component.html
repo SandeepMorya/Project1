@@ -1,0 +1,92 @@
+<div class="flexContainer">
+<div class="fileSearch">
+<div class="text-margin">
+<div>Read from UAT</div>
+<div class="data-margin">
+<select>
+        <option *ngFor="let env of envirnmentsrc" value={{env.name}}>
+            {{env.name}}
+        </option>
+    </select>
+
+</div>
+</div>
+<div class="text-margin">
+<div>Select File Types</div>
+<div class="data-margin">
+<select>
+        <option *ngFor="let selectedfile of selectfile" value={{selectedfile.name}}>
+            {{selectedfile.name}}
+        </option>
+    </select>
+
+</div>
+</div>
+<div class="text-margin">
+<div>Date</div>
+<div class="data-margin">
+<input type="date" id="filedate">
+</div>
+</div>
+
+<div class="text-margin">
+<div>sort by site</div>
+<div class="data-margin">
+<select>
+        <option *ngFor="let selectedsite of Site" value={{selectedsite.name}}>
+            {{selectedsite.name}}
+        </option>
+    </select>
+
+</div>
+</div>
+<div class="text-margin">
+<div>Parter List</div>
+<div class="data-margin">
+<select>
+        <option *ngFor="let ptlist of partnerslist" value={{ptlist.name}}>
+            {{ptlist.name}}
+        </option>
+    </select>
+
+</div>
+</div>
+
+<div>
+<button (click)="getfiles()">Display Available Files</button>
+</div>
+
+<div *ngIf="Isfilesavailable" style="margin-top:15px;">
+    <table border="1">
+        <tr style="background-color:darkblue;color:white;">
+        <td> </td>
+        <td>File Name</td>
+        <td>UCD</td>
+        <td>T/P</td>
+        <td>Origin RT</td>
+        <td>Destination RT</td>
+        <td>Creation Date</td>
+        <td>Creation Time</td>
+        <td>File ID Modifier</td>
+        <td>Site ID</td>
+        <td>Item Count</td>
+        <td>Total Amount</td>
+        </tr>
+        <tr *ngFor="let avfile of availablefiles">
+            <td> <input type="checkbox"> </td>
+        <td>{{avfile.FileName}}</td>
+        <td>{{avfile.UCD}}</td>
+        <td>{{avfile.TP}}</td>
+        <td>{{avfile.OriginRT}}</td>
+        <td>{{avfile.DestinationRT}}</td>
+        <td>{{avfile.CreationDate}}</td>
+        <td>{{avfile.CreationTime}}</td>
+        <td>{{avfile.FileIDModifier}}</td>
+        <td>{{avfile.SiteID}}</td>
+        <td>{{avfile.ItemCount}}</td>
+        <td>{{avfile.TotalAmount}}</td>
+        </tr>
+    </table>
+</div>
+</div>
+</div>
